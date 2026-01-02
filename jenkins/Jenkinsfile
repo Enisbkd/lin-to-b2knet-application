@@ -1,0 +1,57 @@
+pipeline{
+	agent{
+	label "dev"
+	}
+    environment {
+
+			SBM_PROJECT_DIR="$WORKSPACE/projects" // unused
+			npm_config_registry="https://nexus01.bbad1.sbm.interne/repository/proxy_npm_npmjsorg"
+			NODE_EXTRA_CA_CERTS="/etc/pki/ca-trust/source/anchors/ca-sbm-interne.crt"
+			TRUSTSTORE_PASSWORD="changeit"
+			DOCKER_REGISTRY_CREDENTIALS = credentials('harbor-credentials')
+			GET_COMMON_ENTITIES_TOKEN = credentials('get-common-entities-token')
+
+    }
+	stages{
+
+		stage('prepare files'){
+			steps{
+				script{
+                    sh(" cp -f $WORKSPACE/jenkins/jhipster.docker-conventions.gradle $WORKSPACE/buildSrc/src/main/groovy/jhipster.docker-conventions.gradle")
+                    sh(" cp -f $WORKSPACE/jenkins/jhipster.node-gradle-conventions.gradle $WORKSPACE/buildSrc/src/main/groovy/jhipster.node-gradle-conventions.gradle")
+                    sh(" cp -f $WORKSPACE/jenkins/gradle.properties $WORKSPACE/gradle.properties")
+                    sh(" cp -f $WORKSPACE/jenkins/build_src.build.gradle $WORKSPACE/buildSrc/build.gradle")
+                    sh(" cp -f $WORKSPACE/jenkins/gradle-wrapper.properties $WORKSPACE/gradle/wrapper/gradle-wrapper.properties")
+                    sh(" cp -f $WORKSPACE/jenkins/build.gradle $WORKSPACE/build.gradle")
+                    sh(" cp -f  $WORKSPACE/jenkins/settings.gradle $WORKSPACE/settings.gradle")
+					sh(" mkdir -p tmp")
+  				}
+			}
+    }
+
+
+		stage('ls'){
+			steps{
+				script{
+                    sh( "ls -la $WORKSPACE/")
+                    sh( "cat  $WORKSPACE/build.gradle")
+                    sh( "cat  $WORKSPACE/gradle/wrapper/gradle-wrapper.properties")
+                    sh( "cat  $WORKSPACE/gradle.properties")
+                    sh( "cat  $WORKSPACE/settings.gradle")
+					sh(" mkdir -p tmp/v22.14.0")
+					sh( "curl https://nexus01.bbad1.sbm.interne/repository/hosted_raw_devtools/node/node-v22.14.0-linux-x64.tar.gz -o $WORKSPACE/tmp/v22.14.0/node-v22.14.0-linux-x64.tar.gz")
+  				}
+			}
+        }
+
+		stage('create image '){
+			steps{
+				script{
+					sh """
+					cd $WORKSPACE/ &&  ./gradlew bootJar -Pdev jib
+					"""
+				}
+			}
+        }
+	}
+}

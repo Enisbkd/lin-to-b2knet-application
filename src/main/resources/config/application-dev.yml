@@ -27,6 +27,15 @@ spring:
       group-id: lin2b2knet-consumer
     properties:
       spring.json.trusted.packages: "mc.sbm.lintob2knet,java.util"
+      application.id: b2knetview
+      security.protocol: 'PLAINTEXT'
+      sasl.mechanism: ''
+      sasl.jaas.config: ''
+      ssl.sslTruststoreLocation: ''
+      ssl.sslTruststorePassword: ''
+      auto.offset.reset: earliest
+    topics:
+      logs-topic: log-lin-lintob2knet-${env}
   devtools:
     restart:
       enabled: true
@@ -92,3 +101,4 @@ jhipster:
 app:
   kafka:
     env: ${KAFKA_ENV:dev}
+env: dev

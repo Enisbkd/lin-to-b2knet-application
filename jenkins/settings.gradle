@@ -1,0 +1,21 @@
+
+pluginManagement {
+  repositories {
+    maven {
+      url "https://nexus01.bbad1.sbm.interne/repository/proxy_maven_gradleplugins/"
+    }
+  }
+  buildscript {
+    repositories {
+      maven {
+        url "https://nexus01.bbad1.sbm.interne/repository/proxy_maven_gradleplugins/"
+      }
+    }
+    dependencies {
+      classpath "org.liquibase:liquibase-core:${liquibaseVersion}"
+    }
+  }
+  plugins {
+  }
+}
+rootProject.name = "lin-to-b2knet-application"
