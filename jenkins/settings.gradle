@@ -12,7 +12,6 @@ pluginManagement {
       }
     }
     dependencies {
-      classpath "org.liquibase:liquibase-core:${liquibaseVersion}"
     }
   }
   plugins {
