@@ -1,0 +1,87 @@
+plugins {
+  id "java"
+  id "maven-publish"
+  id "idea"
+  id "eclipse"
+  alias(libs.plugins.gradle.git.properties)
+  alias(libs.plugins.spring.boot)
+  id "jhipster.docker-conventions"
+  id "jhipster.code-quality-conventions"
+  id "jhipster.node-gradle-conventions"
+  // jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
+}
+
+group = "mc.sbm.lintob2knet"
+version = "0.0.1-SNAPSHOT"
+
+description = ""
+
+java {
+  sourceCompatibility = 17
+  targetCompatibility = 17
+}
+assert System.properties["java.specification.version"] == "17" || "21" || "25"
+
+repositories {
+  mavenCentral()
+  // Local maven repository is required for libraries built locally with maven like development jhipster-bom.
+  // mavenLocal()
+  // jhipster-needle-gradle-repositories - JHipster will add additional repositories
+}
+
+apply from: "gradle/spring-boot.gradle"
+// jhipster-needle-gradle-apply-from - JHipster will add additional gradle scripts to be applied here
+
+idea {
+  module {
+    excludeDirs += files("node_modules")
+  }
+}
+
+eclipse {
+  sourceSets {
+    main {
+      java {
+        srcDirs += ["build/generated/sources/annotationProcessor/java/main"]
+      }
+    }
+  }
+}
+
+dependencies {
+  implementation libs.jhipster.framework
+  implementation libs.mapstruct
+  implementation libs.springdoc.openapi.starter.webmvc.api
+  implementation "org.springframework.boot:spring-boot-loader-tools"
+  implementation "org.springframework.boot:spring-boot-starter"
+  implementation "org.springframework.boot:spring-boot-starter-actuator"
+  implementation "org.springframework.boot:spring-boot-starter-aop"
+  implementation "org.springframework.boot:spring-boot-starter-mail"
+  implementation "org.springframework.boot:spring-boot-starter-oauth2-resource-server"
+  implementation "org.springframework.boot:spring-boot-starter-security"
+  implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+  implementation "org.springframework.boot:spring-boot-starter-tomcat"
+  implementation "org.springframework.boot:spring-boot-starter-validation"
+  implementation "org.springframework.boot:spring-boot-starter-web"
+  implementation "com.fasterxml.jackson.datatype:jackson-datatype-hppc"
+  implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+  implementation "io.micrometer:micrometer-registry-prometheus-simpleclient"
+  implementation "org.apache.commons:commons-lang3"
+  testImplementation(libs.archunit.junit5.api) {
+    exclude group: 'org.slf4j', module: 'slf4j-api'
+  }
+  testImplementation "org.springframework.boot:spring-boot-starter-test"
+  testImplementation "org.springframework.boot:spring-boot-test"
+  testImplementation "org.springframework.security:spring-security-test"
+  testRuntimeOnly(libs.archunit.junit5.engine) {
+    exclude group: 'org.slf4j', module: 'slf4j-api'
+  }
+  annotationProcessor libs.mapstruct.processor
+  annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+  implementation 'org.springframework.kafka:spring-kafka'
+  implementation 'org.apache.kafka:kafka-streams'
+  implementation 'com.fasterxml.jackson.core:jackson-databind'
+  compileOnly 'org.projectlombok:lombok:1.18.26'
+  compileOnly 'org.projectlombok:lombok:1.18.42'
+  annotationProcessor 'org.projectlombok:lombok:1.18.42'
+}
