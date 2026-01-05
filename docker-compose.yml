@@ -128,8 +128,8 @@ services:
       - ./config:/config
       - ./data:/data
       - ./logs:/logs
-      - ./scripts:/scripts
-    entrypoint: ["/bin/sh", "/scripts/rclone-wrapper.sh"]
+      - ./rclone_files:/rclone_files
+    entrypoint: ["/bin/sh", "/rclone_files/rclone-wrapper.sh"]
 
     privileged: true
     cap_add:

@@ -3,7 +3,7 @@
   "config": {
     "connector.class": "io.confluent.connect.s3.S3SinkConnector",
     "tasks.max": "1",
-    "topics": "b2knetIn_employees",
+    "topics": "data-lin-employees-formatted-one-dev",
     "format.bytearray.extension": ".csv",
     "s3.bucket.name": "kafka-sink",
     "s3.region": "us-east-1",
@@ -16,10 +16,11 @@
     "timestamp.extractor": "Wallclock",
     "locale": "fr-FR",
     "timezone": "Europe/Paris",
-    "flush.size": "1000",
-    "rotate.interval.ms": "60000",
+    "flush.size": "100",
+    "rotate.interval.ms": "3000",
     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
     "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
-    "value.converter.schemas.enable": "true"
+    "value.converter.schemas.enable": "true",
+    "consumer.auto.offset.reset": "earliest"
   }
 }

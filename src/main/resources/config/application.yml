@@ -177,7 +177,7 @@ jhipster:
     default-include-pattern: /api/**
     management-include-pattern: /management/**
     title: Lin To B 2 Knet Application API
-    description: Lin To B 2 Knet Application API documentation
+    description: LinToB2Knet Application API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:
@@ -201,3 +201,5 @@ jhipster:
 # ===================================================================
 
 # application:
+build:
+  version: @project.version@
