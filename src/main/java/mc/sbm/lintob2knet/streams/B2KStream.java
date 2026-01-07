@@ -9,7 +9,7 @@ public enum B2KStream {
     CATEGORY_MODELS("data-lin-categorymodels-raw-one-", "data-lin-categorymodels-formatted-one-", CategoryModelTransaction.class, "210", "211"),
     SIZES("data-lin-sizes-raw-one-", "data-lin-sizes-formatted-one-", ModelSizeTransaction.class, "300", "301"),
     CLIENTS("data-lin-clients-raw-one-", "data-lin-clients-formatted-one-", UserTransaction.class, "400", "401"),
-    CLIENT_CONVEYORS("data-lin-clientconveyors-raw-one-", "data-lin-clientconveyors-formatted-one-", UserConveyorTransaction.class, "410", "411"),
+    USER_CONVEYORS("data-lin-userconveyors-raw-one-", "data-lin-userconveyors-formatted-one-", UserConveyorTransaction.class, "410", "411"),
     CATEGORY_USERS("data-lin-categoryusers-raw-one-", "data-lin-categoryusers-formatted-one-", CategoryUserTransaction.class, "420", "421"),
     CHIPS("data-lin-chips-raw-one-", "data-lin-chips-formatted-one-", ChipTransaction.class, "500", "501"),
     CHIP_RETURNS("data-lin-garmentreturns-raw-one-", "data-lin-garmentreturns-formatted-one-", ChipReturnedTransaction.class, "520", null),

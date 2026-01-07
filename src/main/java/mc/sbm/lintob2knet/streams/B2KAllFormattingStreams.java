@@ -35,7 +35,7 @@ public class B2KAllFormattingStreams {
         factory.buildFormattingStream(builder, B2KStream.CLIENTS, UserTransaction.class);
 
         // Transaction 410/411: User-Conveyor Relations
-        factory.buildFormattingStream(builder, B2KStream.CLIENT_CONVEYORS, UserConveyorTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.USER_CONVEYORS, UserConveyorTransaction.class);
 
         // Transaction 420/421: Category-User Relations
         factory.buildFormattingStream(builder, B2KStream.CATEGORY_USERS, CategoryUserTransaction.class);

@@ -3,7 +3,7 @@ package mc.sbm.lintob2knet.format;
 
 import mc.sbm.lintob2knet.model.UserTransaction;
 
-public class ClientFormatter {
+public class UserFormatter {
     public static String format(UserTransaction t) {
         StringBuilder sb = new StringBuilder();
         sb.append(fix(t.getId(),3));

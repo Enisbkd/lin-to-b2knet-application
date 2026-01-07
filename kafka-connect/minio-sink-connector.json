@@ -3,7 +3,7 @@
   "config": {
     "connector.class": "io.confluent.connect.s3.S3SinkConnector",
     "tasks.max": "1",
-    "topics": "b2knetIn_models",
+    "topics": "data-lin-sizes-formatted-hp-dev,data-lin-models-formatted-hp-dev,data-lin-garments-formatted-hp-dev,data-lin-garmentreturns-formatted-hp-dev,data-lin-clients-formatted-hp-dev,data-lin-categories-formatted-hp-dev,data-lin-categoryusers-formatted-hp-dev,data-lin-categorymodels-formatted-hp-dev,data-lin-userconveyors-formatted-hp-dev,data-lin-usermodels-formatted-hp-dev,data-lin-modelstorages-formatted-hp-dev,data-lin-functions-formatted-hp-dev,data-lin-sizes-formatted-one-dev,data-lin-models-formatted-one-dev,data-lin-garments-formatted-one-dev,data-lin-garmentreturns-formatted-one-dev,data-lin-clients-formatted-one-dev,data-lin-categories-formatted-one-dev,data-lin-categoryusers-formatted-one-dev,data-lin-categorymodels-formatted-one-dev,data-lin-userconveyors-formatted-one-dev,data-lin-usermodels-formatted-one-dev,data-lin-modelstorages-formatted-one-dev,data-lin-functions-formatted-one-dev",
     "consumer.auto.offset.reset": "earliest",
     "s3.bucket.name": "kafka-sink",
     "format.bytearray.extension": ".txt",

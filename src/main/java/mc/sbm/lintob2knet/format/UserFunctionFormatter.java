@@ -3,7 +3,7 @@ package mc.sbm.lintob2knet.format;
 
 import mc.sbm.lintob2knet.model.UserFunctionTransaction;
 
-public class FunctionFormatter {
+public class UserFunctionFormatter {
     public static String format(UserFunctionTransaction t) {
         StringBuilder sb = new StringBuilder();
         sb.append(fix(t.getId(),3));

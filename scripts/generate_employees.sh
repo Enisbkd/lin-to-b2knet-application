@@ -78,7 +78,7 @@ EOF
     echo -e "\n→ Sent employee $i/$100: $EMPLOYEE_CODE ($FIRST_NAME $LAST_NAME)"
 
     # Small delay to avoid overwhelming the server (optional)
-    sleep 5
+    sleep 0
 done
 
 echo "----------------------------------------------------"

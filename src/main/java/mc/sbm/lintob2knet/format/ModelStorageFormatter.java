@@ -1,13 +1,15 @@
-
 package mc.sbm.lintob2knet.format;
 
-import mc.sbm.lintob2knet.model.ChipReturnedTransaction;
+import mc.sbm.lintob2knet.model.ModelStorageTransaction;
 
-public class Return520Formatter {
-    public static String format(ChipReturnedTransaction t) {
+public class ModelStorageFormatter {
+
+    public static String format(ModelStorageTransaction t) {
         StringBuilder sb = new StringBuilder();
         sb.append(fix(t.getId(), 3));
-        sb.append(fix(t.getChipCode(), 24));
+        sb.append(fix(t.getModelCode(), 12));
+        sb.append(fix(t.getModelUse(), 1));
+        sb.append(fix(t.getConveyorCode(), 2));
         return sb.toString();
     }
 
