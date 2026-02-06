@@ -1,25 +1,20 @@
 #!/bin/bash
 set -e
 
-KAFKA_CONTAINER="kafka"
+KAFKA_CONTAINER="broker"
 BOOTSTRAP_SERVER="localhost:9092"
 PARTITIONS=1
 REPLICATION_FACTOR=1
 
 TOPICS=(
-data-lin-categories-raw-one-dev
- data-lin-categorymodels-raw-one-dev
- data-lin-categoryusers-raw-one-dev
- data-lin-chips-raw-one-dev
- data-lin-clientconveyors-raw-one-dev
- data-lin-clients-raw-one-dev
- data-lin-employees-raw-one-dev
- data-lin-functions-raw-one-dev
- data-lin-garmentreturns-raw-one-dev
- data-lin-models-raw-one-dev
- data-lin-modelstorages-raw-one-dev
- data-lin-sizes-raw-one-dev
- data-lin-usermodels-raw-one-dev
+  data-lin-userconveyors-raw-one-dev
+  log-lin-lintob2knet-dev
+  data-lin-models-raw-one-dev
+  data-lin-sizes-raw-one-dev
+  data-lin-users-raw-one-dev
+  data-lin-usermodels-raw-one-dev
+  data-lin-garments-raw-one-dev
+  data-lin-general-formatted-one-dev
 )
 
 for TOPIC in "${TOPICS[@]}"; do

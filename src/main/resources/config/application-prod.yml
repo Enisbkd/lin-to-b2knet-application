@@ -26,6 +26,17 @@ management:
         enabled: false
 
 spring:
+  kafka:
+    bootstrap-servers: ${LINTOB2KNET_KAFKA_BOOTSTRAP_SERVERS}
+    properties:
+      application.id: ${LINTOB2KNET_KAFKA_PROPERTIES_APP_ID}
+      security.protocol: 'SASL_SSL'
+      sasl.mechanism: 'SCRAM-SHA-512'
+      sasl.jaas.config: ${LINTOB2KNET_KAFKA_PROPERTIES_SASL_JAAS_CONFIG}
+      ssl.sslTruststoreLocation: ${LINTOB2KNET_KAFKA_PROPERTIES_TRUSTSTORE_LOCATION}
+      ssl.sslTruststorePassword: ${LINTOB2KNET_KAFKA_PROPERTIES_TRUSTSTORE_PASSWORD}
+    topics:
+      logs-topic: log-lin-lintob2knet-${env}
   devtools:
     restart:
       enabled: false

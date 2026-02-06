@@ -27,7 +27,7 @@ public class KafkaConsumerConfig {
         cfg.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         cfg.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         cfg.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, org.springframework.kafka.support.serializer.JsonDeserializer.class);
-        cfg.put("spring.json.trusted.packages", "mc.sbm.lin2btk");
+        cfg.put("spring.json.trusted.packages", "mc.sbm.lintob2knet");
         cfg.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         return new DefaultKafkaConsumerFactory<>(cfg);
     }

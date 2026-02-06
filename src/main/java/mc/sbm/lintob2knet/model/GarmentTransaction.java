@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChipTransaction {
+public class GarmentTransaction {
     @NotBlank
     @Pattern(regexp = "^50[01]$", message = "Id must be 500 or 501")
     private String id;

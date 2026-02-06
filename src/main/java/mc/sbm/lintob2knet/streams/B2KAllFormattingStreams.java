@@ -41,7 +41,7 @@ public class B2KAllFormattingStreams {
         factory.buildFormattingStream(builder, B2KStream.CATEGORY_USERS, CategoryUserTransaction.class);
 
         // Transaction 500/501: Garments/Chips
-        factory.buildFormattingStream(builder, B2KStream.CHIPS, ChipTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.GARMENTS, GarmentTransaction.class);
 
         // Transaction 520: Chip Returns
         factory.buildFormattingStream(builder, B2KStream.CHIP_RETURNS, ChipReturnedTransaction.class);

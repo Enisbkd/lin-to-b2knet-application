@@ -1,10 +1,10 @@
 
 package mc.sbm.lintob2knet.format;
 
-import mc.sbm.lintob2knet.model.ChipTransaction;
+import mc.sbm.lintob2knet.model.GarmentTransaction;
 
-public class ChipFormatter {
-    public static String format(ChipTransaction t) {
+public class GarmentFormatter {
+    public static String format(GarmentTransaction t) {
         StringBuilder sb = new StringBuilder();
         sb.append(fix(t.getId(),3));
         sb.append(fix(t.getChipCode(),24));

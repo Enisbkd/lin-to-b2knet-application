@@ -38,9 +38,9 @@ public class B2KFormatterRouter {
             if ("520".equals(transactionCode)) {
                 return ChipReturnedFormatter.format(returnTx);
             }
-        } else if (payload instanceof ChipTransaction chipTx) {
+        } else if (payload instanceof GarmentTransaction chipTx) {
             if ("500".equals(transactionCode) || "501".equals(transactionCode)) {
-                return ChipFormatter.format(chipTx);
+                return GarmentFormatter.format(chipTx);
             }
         } else if (payload instanceof UserFunctionTransaction functionTx) {
             if ("900".equals(transactionCode) || "901".equals(transactionCode)) {
