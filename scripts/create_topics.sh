@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Kafka Topic Creation Script
@@ -6,7 +7,7 @@
 set -e  # Exit on error
 
 # Configuration
-KAFKA_CONTAINER="broker"
+KAFKA_CONTAINER="kafka"
 BOOTSTRAP_SERVER="localhost:9092"
 PARTITIONS=3
 REPLICATION_FACTOR=1
@@ -68,10 +69,10 @@ describe_topic() {
 }
 
 # Arrays for entities and conveyors
-ENTITIES=("models" "sizes" "users" "usermodels" "garments")
+ENTITIES=("garments" "models" "sizes" "usermodels" "users")
 CONVEYORS=("hp" "one")
 
-echo -e "${BLUE}Step 1: Creating RAW topics (10 topics total)${NC}\n"
+echo -e "${BLUE}Creating RAW topics (10 topics)${NC}\n"
 
 # Create RAW topics (5 entities × 2 conveyors = 10 topics)
 for conveyor in "${CONVEYORS[@]}"; do
@@ -81,9 +82,9 @@ for conveyor in "${CONVEYORS[@]}"; do
     done
 done
 
-echo -e "${BLUE}Step 2: Creating FORMATTED topics (2 topics total)${NC}\n"
+echo -e "${BLUE}Creating conveyor topics (2 topics)${NC}\n"
 
-# Create FORMATTED topics (1 per conveyor = 2 topics)
+# Create conveyor topics (hp and one)
 for conveyor in "${CONVEYORS[@]}"; do
     topic_name="data-lin-${conveyor}-${ENV}"
     create_topic "$topic_name" $PARTITIONS $REPLICATION_FACTOR
@@ -95,8 +96,14 @@ echo -e "${GREEN}================================================${NC}\n"
 
 # Summary
 echo -e "${BLUE}Summary:${NC}"
-echo -e "  - RAW topics created: 10 (5 entities × 2 conveyors)"
-echo -e "  - FORMATTED topics created: 2 (1 per conveyor)"
+echo -e "  - RAW topics created: 10"
+echo -e "    * garments-raw-hp-${ENV}, garments-raw-one-${ENV}"
+echo -e "    * models-raw-hp-${ENV}, models-raw-one-${ENV}"
+echo -e "    * sizes-raw-hp-${ENV}, sizes-raw-one-${ENV}"
+echo -e "    * usermodels-raw-hp-${ENV}, usermodels-raw-one-${ENV}"
+echo -e "    * users-raw-hp-${ENV}, users-raw-one-${ENV}"
+echo -e "  - Conveyor topics created: 2"
+echo -e "    * hp-${ENV}, one-${ENV}"
 echo -e "  - Total topics created: 12"
 echo -e "  - Partitions per topic: $PARTITIONS"
 echo -e "  - Replication factor: $REPLICATION_FACTOR"

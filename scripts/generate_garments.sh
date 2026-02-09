@@ -2,7 +2,7 @@
 
 # Configuration
 BASE_URL="http://localhost:6060"
-ENDPOINT="/api/v1/import/one/garments"
+ENDPOINT="/api/v1/import/hp/garments"
 GARMENT_IDS=("500" "501")
 
 # Arrays for random data generation

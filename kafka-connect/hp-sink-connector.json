@@ -1,26 +1,26 @@
 {
-  "name": "csv-formatted-connector",
+  "name": "hp-formatted-connector",
   "config": {
     "connector.class": "io.confluent.connect.s3.S3SinkConnector",
     "tasks.max": "1",
-    "topics": "data-lin-employees-formatted-one-dev",
-    "format.bytearray.extension": ".csv",
+    "topics": "data-lin-hp-dev",
+    "consumer.auto.offset.reset": "earliest",
     "s3.bucket.name": "kafka-sink",
+    "format.bytearray.extension": ".txt",
     "s3.region": "us-east-1",
     "store.url": "http://minio:9000",
     "storage.class": "io.confluent.connect.s3.storage.S3Storage",
     "format.class": "io.confluent.connect.s3.format.bytearray.ByteArrayFormat",
     "partitioner.class": "io.confluent.connect.storage.partitioner.TimeBasedPartitioner",
-    "partition.duration.ms": "60000",
+    "partition.duration.ms": "500",
     "path.format": "YYYYMMdd/HH",
-    "timestamp.extractor": "Wallclock",
     "locale": "fr-FR",
     "timezone": "Europe/Paris",
-    "flush.size": "100",
-    "rotate.interval.ms": "3000",
+    "timestamp.extractor": "Wallclock",
+    "flush.size": "20",
+    "rotate.interval.ms": "6000",
     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
     "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
-    "value.converter.schemas.enable": "true",
-    "consumer.auto.offset.reset": "earliest"
+    "value.converter.schemas.enable": "false"
   }
 }

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Adjust the host and port if necessary
-URL="http://localhost:6060/api/v1/import/one/models"
+URL="http://localhost:6060/api/v1/import/hp/models"
 
 echo "Starting to send 10 requests to $URL..."
 
