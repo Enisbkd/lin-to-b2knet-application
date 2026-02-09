@@ -11,18 +11,16 @@ public class ModelFormatter {
 
     public static String format(ModelTransaction t) {
         System.out.println("formatting ModelTransaction:" + (t == null ? "null" : t.toString()));
-        StringBuilder sb = new StringBuilder();
-        sb.append(fix(t.getId(), 3)); // Assuming 3 chars for ID
-        sb.append(fix(t.getModelCode(), 12));
-        sb.append(fix(t.getModelShortDescription(), 30));
-        sb.append(fix(t.getModelLongDescription(), 30));
-        sb.append(fix(t.getOccupation(), 2));
-        sb.append(fix(formatDate(t.getFromDate()), 8)); // Format as DDMMYYYY
-        sb.append(fix(formatDate(t.getToDate()), 8));   // Format as DDMMYYYY
-        sb.append(fix(t.getHungType(), 2));
-        sb.append(fix(t.getModelType(), 2));
 
-        return sb.toString();
+        return fix(t.getId(), 3) + // Assuming 3 chars for ID
+            fix(t.getModelCode(), 12) +
+            fix(t.getModelShortDescription(), 30) +
+            fix(t.getModelLongDescription(), 30) +
+            fix(t.getOccupation(), 2) +
+            fix(formatDate(t.getFromDate()), 8) + // Format as DDMMYYYY
+            fix(formatDate(t.getToDate()), 8) +   // Format as DDMMYYYY
+            fix(t.getHungType(), 2) +
+            fix(t.getModelType(), 2);
     }
 
     /**

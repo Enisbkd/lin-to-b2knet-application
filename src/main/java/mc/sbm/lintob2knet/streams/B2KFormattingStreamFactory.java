@@ -27,36 +27,39 @@ public class B2KFormattingStreamFactory {
         this.topicConfig = topicConfig;
     }
 
-    public <T> void buildFormattingStream(StreamsBuilder builder, B2KStream streamInfo, Class<T> type) {
-        // Deserialize as GenericImportEvent since that's the actual message structure
+    /**
+     * Builds a formatting stream for a specific conveyor and stream type
+     * Reads from: data-lin-{entity}-raw-{conveyor}-{env}
+     * Writes to: data-lin-{conveyor}-{env}
+     */
+    public <T> void buildFormattingStream(StreamsBuilder builder, B2KStream streamInfo, String conveyor, Class<T> type) {
         JsonSerde<GenericImportEvent> valueSerde = new JsonSerde<>(GenericImportEvent.class, objectMapper);
 
         valueSerde.configure(Map.of(
-                JsonDeserializer.TRUSTED_PACKAGES, "*",
-                JsonDeserializer.USE_TYPE_INFO_HEADERS, false,
-                JsonDeserializer.VALUE_DEFAULT_TYPE, GenericImportEvent.class.getName(),
-                JsonDeserializer.REMOVE_TYPE_INFO_HEADERS, false
+            JsonDeserializer.TRUSTED_PACKAGES, "*",
+            JsonDeserializer.USE_TYPE_INFO_HEADERS, false,
+            JsonDeserializer.VALUE_DEFAULT_TYPE, GenericImportEvent.class.getName(),
+            JsonDeserializer.REMOVE_TYPE_INFO_HEADERS, false
         ), false);
 
-        String rawTopic = streamInfo.getRawTopic(topicConfig.getEnv());
-        String formattedTopic = streamInfo.getFormattedTopic(topicConfig.getEnv());
+        String rawTopic = streamInfo.getRawTopic(conveyor, topicConfig.getEnv());
+        String formattedTopic = topicConfig.buildFormattedTopic(conveyor);
 
         builder.stream(rawTopic, Consumed.with(Serdes.String(), valueSerde))
-                .mapValues((readOnlyKey, event) -> {
-                    if (event == null || event.getPayload() == null) {
-                        throw new IllegalStateException("Received null event or payload for key: " + readOnlyKey);
-                    }
-                    // Convert the payload to the target type
-                    T value = objectMapper.convertValue(event.getPayload(), type);
-                    System.out.println("value in stream: " + value);
+            .mapValues((readOnlyKey, event) -> {
+                if (event == null || event.getPayload() == null) {
+                    throw new IllegalStateException("Received null event or payload for key: " + readOnlyKey);
+                }
 
-                    String txCode = event.getTransactionCode();
-                    if (txCode == null || txCode.isEmpty() || !streamInfo.supportsTransactionCode(txCode)) {
-                        txCode = streamInfo.insertUpdateCode;
-                    }
+                T value = objectMapper.convertValue(event.getPayload(), type);
 
-                    return router.format(txCode, value);
-                })
-                .to(formattedTopic, Produced.with(Serdes.String(), Serdes.String()));
+                String txCode = event.getTransactionCode();
+                if (txCode == null || txCode.isEmpty() || !streamInfo.supportsTransactionCode(txCode)) {
+                    txCode = streamInfo.insertUpdateCode;
+                }
+
+                return router.format(txCode, value);
+            })
+            .to(formattedTopic, Produced.with(Serdes.String(), Serdes.String()));
     }
 }

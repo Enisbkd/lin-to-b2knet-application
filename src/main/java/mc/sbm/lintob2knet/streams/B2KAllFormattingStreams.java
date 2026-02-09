@@ -16,43 +16,18 @@ public class B2KAllFormattingStreams {
 
     @Autowired
     public void buildPipeline(StreamsBuilder builder) {
-        // Transaction 100/101: Models (Articles)
-        factory.buildFormattingStream(builder, B2KStream.MODELS, ModelTransaction.class);
+        // Build streams for HP conveyor
+        factory.buildFormattingStream(builder, B2KStream.MODELS, "hp", ModelTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.SIZES, "hp", SizeTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.USERS, "hp", UserTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.USER_MODELS, "hp", UserModelTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.GARMENTS, "hp", GarmentTransaction.class);
 
-        // Transaction 110/111: Model-Storage Relations
-        factory.buildFormattingStream(builder, B2KStream.MODEL_STORAGES, ModelStorageTransaction.class);
-
-        // Transaction 200/201: User Categories
-        factory.buildFormattingStream(builder, B2KStream.CATEGORIES, CategoryTransaction.class);
-
-        // Transaction 210/211: Category-Model Relations
-        factory.buildFormattingStream(builder, B2KStream.CATEGORY_MODELS, CategoryModelTransaction.class);
-
-        // Transaction 300/301: Model Sizes
-        factory.buildFormattingStream(builder, B2KStream.SIZES, ModelSizeTransaction.class);
-
-        // Transaction 400/401: Users/Clients
-        factory.buildFormattingStream(builder, B2KStream.CLIENTS, UserTransaction.class);
-
-        // Transaction 410/411: User-Conveyor Relations
-        factory.buildFormattingStream(builder, B2KStream.USER_CONVEYORS, UserConveyorTransaction.class);
-
-        // Transaction 420/421: Category-User Relations
-        factory.buildFormattingStream(builder, B2KStream.CATEGORY_USERS, CategoryUserTransaction.class);
-
-        // Transaction 500/501: Garments/Chips
-        factory.buildFormattingStream(builder, B2KStream.GARMENTS, GarmentTransaction.class);
-
-        // Transaction 520: Chip Returns
-        factory.buildFormattingStream(builder, B2KStream.CHIP_RETURNS, ChipReturnedTransaction.class);
-
-        // Transaction 600/601: User-Model Relations
-        factory.buildFormattingStream(builder, B2KStream.USER_MODELS, UserModelTransaction.class);
-
-        // Transaction 900/901: User Functions
-        factory.buildFormattingStream(builder, B2KStream.FUNCTIONS, UserFunctionTransaction.class);
-
-        // CSV: Employees
-        factory.buildFormattingStream(builder, B2KStream.EMPLOYEES, EmployeeTransaction.class);
+        // Build streams for ONE conveyor
+        factory.buildFormattingStream(builder, B2KStream.MODELS, "one", ModelTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.SIZES, "one", SizeTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.USERS, "one", UserTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.USER_MODELS, "one", UserModelTransaction.class);
+        factory.buildFormattingStream(builder, B2KStream.GARMENTS, "one", GarmentTransaction.class);
     }
 }

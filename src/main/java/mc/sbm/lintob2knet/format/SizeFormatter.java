@@ -1,10 +1,10 @@
 
 package mc.sbm.lintob2knet.format;
 
-import mc.sbm.lintob2knet.model.ModelSizeTransaction;
+import mc.sbm.lintob2knet.model.SizeTransaction;
 
-public class ModelSizeFormatter {
-    public static String format(ModelSizeTransaction t) {
+public class SizeFormatter {
+    public static String format(SizeTransaction t) {
         StringBuilder sb = new StringBuilder();
         sb.append(fix(t.getId(), 3));
         sb.append(fix(t.getModelCode(), 12));

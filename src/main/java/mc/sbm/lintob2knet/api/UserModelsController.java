@@ -5,20 +5,19 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mc.sbm.lintob2knet.config.TopicConfig;
 import mc.sbm.lintob2knet.kafka.producer.GenericProducer;
-import mc.sbm.lintob2knet.model.GarmentTransaction;
 import mc.sbm.lintob2knet.model.GenericImportEvent;
+import mc.sbm.lintob2knet.model.UserModelTransaction;
 import mc.sbm.lintob2knet.validation.ConveyorValidator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-
 @RestController
-@RequestMapping("/api/v1/import/{conveyorCode}/garments")
+@RequestMapping("/api/v1/import/{conveyorCode}/user-models")
 @RequiredArgsConstructor
 @Slf4j
-public class GarmentsController {
+public class UserModelsController {
 
     private static final String DEFAULT_KEY = "default";
 
@@ -29,28 +28,28 @@ public class GarmentsController {
     @PostMapping
     public ResponseEntity<Map<String, String>> post(
             @PathVariable String conveyorCode,
-            @Valid @RequestBody GarmentTransaction dto) {
+            @Valid @RequestBody UserModelTransaction dto) {
 
         String normalizedConveyor = conveyorValidator.normalize(conveyorCode);
 
-        log.debug("Received garment import request: transactionId={}, chipCode={}, conveyor={}",
-            dto.getId(), dto.getChipCode(), normalizedConveyor);
+        log.debug("Received user-model import request: transactionId={}, userNumber={}, itemCode={}, conveyor={}",
+            dto.getId(), dto.getUserNumber(), dto.getItemCode(), normalizedConveyor);
 
         GenericImportEvent evt = GenericImportEvent.builder()
             .transactionCode(dto.getId())
             .payload(dto)
             .build();
 
-        String messageKey = resolveMessageKey(dto.getChipCode());
-        String topicName = topicConfig.buildRawTopic("garments", normalizedConveyor);
+        String messageKey = resolveMessageKey(dto.getUserNumber());
+        String topicName = topicConfig.buildRawTopic("usermodels", normalizedConveyor);
 
         try {
             producer.send(topicName, messageKey, evt);
-            log.info("Garment import event sent successfully: transactionId={}, chipCode={}, conveyor={}, topic={}, key={}",
-                dto.getId(), dto.getChipCode(), normalizedConveyor, topicName, messageKey);
+            log.info("User-model import event sent successfully: transactionId={}, userNumber={}, itemCode={}, conveyor={}, topic={}, key={}",
+                dto.getId(), dto.getUserNumber(), dto.getItemCode(), normalizedConveyor, topicName, messageKey);
         } catch (Exception e) {
-            log.error("Failed to send garment import event: transactionId={}, chipCode={}, conveyor={}",
-                dto.getId(), dto.getChipCode(), normalizedConveyor, e);
+            log.error("Failed to send user-model import event: transactionId={}, userNumber={}, itemCode={}, conveyor={}",
+                dto.getId(), dto.getUserNumber(), dto.getItemCode(), normalizedConveyor, e);
             throw e;
         }
 
@@ -58,13 +57,14 @@ public class GarmentsController {
             .body(Map.of(
                 "status", "accepted",
                 "transactionId", dto.getId(),
-                "chipCode", dto.getChipCode(),
+                "userNumber", dto.getUserNumber(),
+                "itemCode", dto.getItemCode(),
                 "conveyor", normalizedConveyor,
                 "topic", topicName
             ));
     }
 
-    private String resolveMessageKey(String chipCode) {
-        return chipCode != null && !chipCode.isBlank() ? chipCode : DEFAULT_KEY;
+    private String resolveMessageKey(String userNumber) {
+        return userNumber != null && !userNumber.isBlank() ? userNumber : DEFAULT_KEY;
     }
 }

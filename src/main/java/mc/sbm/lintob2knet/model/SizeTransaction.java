@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ModelSizeTransaction {
+public class SizeTransaction {
     @NotBlank
     @Pattern(regexp = "^30[01]$", message = "Id must be 300 or 301")
     private String id;
