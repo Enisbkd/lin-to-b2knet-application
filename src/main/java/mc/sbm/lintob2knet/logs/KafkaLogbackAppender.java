@@ -30,7 +30,7 @@ public class KafkaLogbackAppender extends KafkaLogbackConfigBase<ILoggingEvent> 
     }
 
     protected void append(ILoggingEvent event) {
-        byte[] message = null;
+        byte[] message;
         if (encoder != null) {
             encoder.setContext(getContext());
             message = encoder.encode(event);

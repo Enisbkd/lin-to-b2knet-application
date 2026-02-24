@@ -8,15 +8,12 @@ import mc.sbm.lintob2knet.kafka.producer.GenericProducer;
 import mc.sbm.lintob2knet.model.CategoryTransaction;
 import mc.sbm.lintob2knet.model.GenericImportEvent;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/import/categories")
+@RequestMapping("/api/v1/import/{conveyorCode}/user-categories")
 @RequiredArgsConstructor
 @Slf4j
 public class CategoriesController {
@@ -28,34 +25,35 @@ public class CategoriesController {
 
 
     @PostMapping
-    public ResponseEntity<Map<String, String>> post(@Valid @RequestBody CategoryTransaction dto) {
+    public ResponseEntity<Map<String, String>> post(
+        @PathVariable String conveyorCode, @Valid @RequestBody CategoryTransaction dto) {
         log.debug("Received category import request: transactionId={}, categoryCode={}",
-                dto.getId(), dto.getCategoryCode());
+            dto.getId(), dto.getCategoryCode());
 
         GenericImportEvent evt = GenericImportEvent.builder()
-                .transactionCode(dto.getId())
-                .payload(dto)
-                .build();
+            .transactionCode(dto.getId())
+            .payload(dto)
+            .build();
 
         String messageKey = resolveMessageKey(dto.getCategoryCode());
-        String topicName = topicConfig.buildRawTopic("categories");
+        String topicName = topicConfig.buildRawTopic("categories", conveyorCode);
 
         try {
             producer.send(topicName, messageKey, evt);
             log.info("Category import event sent successfully: transactionId={}, categoryCode={}, key={}",
-                    dto.getId(), dto.getCategoryCode(), messageKey);
+                dto.getId(), dto.getCategoryCode(), messageKey);
         } catch (Exception e) {
             log.error("Failed to send category import event: transactionId={}, categoryCode={}",
-                    dto.getId(), dto.getCategoryCode(), e);
+                dto.getId(), dto.getCategoryCode(), e);
             throw e;
         }
 
         return ResponseEntity.accepted()
-                .body(Map.of(
-                        "status", "accepted",
-                        "transactionId", dto.getId(),
-                        "categoryCode", dto.getCategoryCode()
-                ));
+            .body(Map.of(
+                "status", "accepted",
+                "transactionId", dto.getId(),
+                "categoryCode", dto.getCategoryCode()
+            ));
     }
 
     private String resolveMessageKey(String categoryCode) {

@@ -37,10 +37,10 @@ public class UserTransaction {
 
     private String costCenter;
 
-    @JsonFormat(pattern = "ddMMyyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate startDate;
 
-    @JsonFormat(pattern = "ddMMyyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate endDate;
 
     private String conveyor;
