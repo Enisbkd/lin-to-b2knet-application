@@ -17,8 +17,8 @@
     "locale": "fr-FR",
     "timezone": "Europe/Paris",
     "timestamp.extractor": "Wallclock",
-    "flush.size": "20",
-    "rotate.interval.ms": "6000",
+    "flush.size": "18",
+    "rotate.interval.ms": "30000",
     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
     "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter",
     "value.converter.schemas.enable": "false"

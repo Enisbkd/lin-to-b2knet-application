@@ -3,12 +3,11 @@ package mc.sbm.lintob2knet.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
 
 // ===== TRANSACTION 400/401: Users =====
 @Data
@@ -16,6 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserTransaction {
+
     @NotBlank
     @Pattern(regexp = "^40[01]$", message = "Id must be 400 or 401")
     private String id;
@@ -37,10 +37,10 @@ public class UserTransaction {
 
     private String costCenter;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "ddMMyyyy")
     private LocalDate startDate;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "ddMMyyyy")
     private LocalDate endDate;
 
     private String conveyor;

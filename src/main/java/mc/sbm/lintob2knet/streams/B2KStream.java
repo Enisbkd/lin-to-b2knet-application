@@ -7,7 +7,8 @@ public enum B2KStream {
     SIZES("sizes", SizeTransaction.class, "300", "301"),
     USERS("users", UserTransaction.class, "400", "401"),
     USER_MODELS("usermodels", UserModelTransaction.class, "600", "601"),
-    GARMENTS("garments", GarmentTransaction.class, "500", "501");
+    GARMENTS("garments", GarmentTransaction.class, "500", "501"),
+    CATEGORIES("categories", CategoryTransaction.class, "200", "201");
 
     public final String entityName;
     public final Class<?> clazz;
@@ -41,7 +42,6 @@ public enum B2KStream {
      * Check if this stream supports the given transaction code
      */
     public boolean supportsTransactionCode(String code) {
-        return (insertUpdateCode != null && insertUpdateCode.equals(code)) ||
-            (deleteCode != null && deleteCode.equals(code));
+        return (insertUpdateCode != null && insertUpdateCode.equals(code)) || (deleteCode != null && deleteCode.equals(code));
     }
 }
