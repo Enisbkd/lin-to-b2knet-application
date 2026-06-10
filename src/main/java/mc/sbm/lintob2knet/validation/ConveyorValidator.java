@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConveyorValidator {
 
-    private static final Set<String> VALID_CONVEYORS = Set.of("hp", "one", "hh");
+    private static final Set<String> VALID_CONVEYORS = Set.of("01", "02", "03");
 
     public void validate(String conveyorCode) {
         if (conveyorCode == null || conveyorCode.isBlank()) {
