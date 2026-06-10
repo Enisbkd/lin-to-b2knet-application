@@ -111,3 +111,7 @@ jhipster:
 # ===================================================================
 
 # application:
+app:
+  kafka:
+    env: ${KAFKA_ENV:prod}
+env: ${ENV:prod}
