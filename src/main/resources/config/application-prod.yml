@@ -115,3 +115,8 @@ app:
   kafka:
     env: ${KAFKA_ENV:prod}
 env: ${ENV:prod}
+
+conveyor:
+  one.name: ${CONVEYOR_ONE_NAME:one}
+  hp.name: ${CONVEYOR_HP_NAME:hp}
+  hh.name: ${CONVEYOR_ONE_NAME:hh}

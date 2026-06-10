@@ -4,12 +4,22 @@ import java.util.Map;
 import mc.sbm.lintob2knet.model.*;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class B2KAllFormattingStreams {
 
     private final B2KFormattingStreamFactory factory;
+
+    @Value("${conveyor.hh.name}")
+    private String hh_name;
+
+    @Value("${conveyor.hp.name}")
+    private String hp_name;
+
+    @Value("${conveyor.one.name}")
+    private String one_name;
 
     // Registry mapping payload "id" (transaction code) to stream info
     private static final Map<String, B2KStream> STREAM_REGISTRY = Map.ofEntries(
@@ -33,22 +43,23 @@ public class B2KAllFormattingStreams {
 
     @Autowired
     public void buildPipeline(StreamsBuilder builder) {
-        // Build streams for HP conveyor (per-entity raw topics)
-        factory.buildFormattingStream(builder, B2KStream.MODELS, "hp", ModelTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.SIZES, "hp", SizeTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.USERS, "hp", UserTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.USER_MODELS, "hp", UserModelTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.GARMENTS, "hp", GarmentTransaction.class);
-
-        // Build streams for ONE conveyor (per-entity raw topics)
-        factory.buildFormattingStream(builder, B2KStream.MODELS, "one", ModelTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.SIZES, "one", SizeTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.USERS, "one", UserTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.USER_MODELS, "one", UserModelTransaction.class);
-        factory.buildFormattingStream(builder, B2KStream.GARMENTS, "one", GarmentTransaction.class);
+        //        // Build streams for HP conveyor (per-entity raw topics)
+        //        factory.buildFormattingStream(builder, B2KStream.MODELS, "hp", ModelTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.SIZES, "hp", SizeTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.USERS, "hp", UserTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.USER_MODELS, "hp", UserModelTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.GARMENTS, "hp", GarmentTransaction.class);
+        //
+        //        // Build streams for ONE conveyor (per-entity raw topics)
+        //        factory.buildFormattingStream(builder, B2KStream.MODELS, "one", ModelTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.SIZES, "one", SizeTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.USERS, "one", UserTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.USER_MODELS, "one", UserModelTransaction.class);
+        //        factory.buildFormattingStream(builder, B2KStream.GARMENTS, "one", GarmentTransaction.class);
 
         // Build general-topic streams (controllers send to general topic)
-        factory.buildFormattingStream(builder, "hp", STREAM_REGISTRY);
-        factory.buildFormattingStream(builder, "one", STREAM_REGISTRY);
+        factory.buildFormattingStream(builder, hh_name, STREAM_REGISTRY);
+        factory.buildFormattingStream(builder, hp_name, STREAM_REGISTRY);
+        factory.buildFormattingStream(builder, one_name, STREAM_REGISTRY);
     }
 }
