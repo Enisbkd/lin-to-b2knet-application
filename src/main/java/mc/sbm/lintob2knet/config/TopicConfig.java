@@ -35,12 +35,12 @@ public class TopicConfig {
     }
 
     /**
-     * Builds general topic name: data-lin-general-{conveyor}-{env}
+     * Builds raw topic name: data-lin-raw-{conveyor}-{env}
      * All controllers send to this single topic.
-     * Example: data-lin-general-hp-dev
+     * Example: data-lin-raw-hp-dev
      */
     public String buildGeneralTopic(String conveyor) {
         String normalizedConveyor = conveyorValidator.normalize(conveyor);
-        return String.format("data-lin-general-%s-%s", normalizedConveyor, env);
+        return String.format("data-lin-raw-%s-%s", normalizedConveyor, env);
     }
 }
