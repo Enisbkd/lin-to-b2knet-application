@@ -119,4 +119,4 @@ env: ${ENV:prod}
 conveyor:
   one.name: ${CONVEYOR_ONE_NAME:one}
   hp.name: ${CONVEYOR_HP_NAME:hp}
-  hh.name: ${CONVEYOR_ONE_NAME:hh}
+  hh.name: ${CONVEYOR_HH_NAME:hh}
