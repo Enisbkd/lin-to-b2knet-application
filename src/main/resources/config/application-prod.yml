@@ -30,6 +30,8 @@ spring:
     consumer:
       group-id: ${LINTOB2KNET_KAFKA_PROPERTIES_APP_ID}
     bootstrap-servers: ${LINTOB2KNET_KAFKA_BOOTSTRAP_SERVERS}
+    streams:
+      application-id: ${LINTOB2KNET_KAFKA_PROPERTIES_APP_ID}
     properties:
       security.protocol: 'SASL_SSL'
       sasl.mechanism: 'SCRAM-SHA-512'

@@ -25,6 +25,8 @@ spring:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: lin2b2knet-consumer
+    streams:
+      application-id: b2knetview
     properties:
       spring.json.trusted.packages: 'mc.sbm.lintob2knet,java.util'
       application.id: b2knetview
