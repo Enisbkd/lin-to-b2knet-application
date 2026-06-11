@@ -1,9 +1,9 @@
 {
-  "name": "models-formatted-connector",
+  "name": "03-formatted-connector",
   "config": {
     "connector.class": "io.confluent.connect.s3.S3SinkConnector",
     "tasks.max": "1",
-    "topics": "data-lin-one-dev",
+    "topics": "data-lin-03-dev",
     "consumer.auto.offset.reset": "earliest",
     "s3.bucket.name": "kafka-sink",
     "format.bytearray.extension": ".txt",

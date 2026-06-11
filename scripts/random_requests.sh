@@ -12,7 +12,7 @@ set -euo pipefail
 BASE_URL="http://localhost:6060/api/v1/import"
 
 COUNT=${1:-100}
-CONVEYOR=${2:-hh}
+CONVEYOR=${2:-03}
 
 # ---------- helpers ----------
 rand_str()  { cat /dev/urandom | tr -dc 'A-Za-z0-9' | head -c "$1"; }

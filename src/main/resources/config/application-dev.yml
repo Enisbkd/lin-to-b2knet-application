@@ -26,7 +26,7 @@ spring:
     consumer:
       group-id: lin2b2knet-consumer
     properties:
-      spring.json.trusted.packages: "mc.sbm.lintob2knet,java.util"
+      spring.json.trusted.packages: 'mc.sbm.lintob2knet,java.util'
       application.id: b2knetview
       security.protocol: 'PLAINTEXT'
       sasl.mechanism: ''
@@ -102,3 +102,7 @@ app:
   kafka:
     env: ${KAFKA_ENV:dev}
 env: dev
+conveyor:
+  one.name: ${CONVEYOR_ONE_NAME:01}
+  hp.name: ${CONVEYOR_HP_NAME:02}
+  hh.name: ${CONVEYOR_HH_NAME:03}
