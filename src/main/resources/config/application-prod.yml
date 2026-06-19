@@ -120,6 +120,12 @@ app:
 env: ${ENV:prod}
 
 conveyor:
-  one.name: ${CONVEYOR_ONE_NAME:one}
-  hp.name: ${CONVEYOR_HP_NAME:hp}
-  hh.name: ${CONVEYOR_HH_NAME:hh}
+  one:
+    name: ${CONVEYOR_ONE_NAME:one}
+    enabled: ${CONVEYOR_ONE_ENABLED:false}
+  hp:
+    name: ${CONVEYOR_HP_NAME:hp}
+    enabled: ${CONVEYOR_HP_ENABLED:false}
+  hh:
+    name: ${CONVEYOR_HH_NAME:hh}
+    enabled: ${CONVEYOR_HH_ENABLED:false}

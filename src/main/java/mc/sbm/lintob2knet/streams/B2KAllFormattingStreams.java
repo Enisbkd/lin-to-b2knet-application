@@ -21,6 +21,15 @@ public class B2KAllFormattingStreams {
     @Value("${conveyor.one.name}")
     private String one_name;
 
+    @Value("${conveyor.hh.enabled:false}")
+    private boolean hh_enabled;
+
+    @Value("${conveyor.hp.enabled:false}")
+    private boolean hp_enabled;
+
+    @Value("${conveyor.one.enabled:false}")
+    private boolean one_enabled;
+
     // Registry mapping payload "id" (transaction code) to stream info
     private static final Map<String, B2KStream> STREAM_REGISTRY = Map.ofEntries(
         Map.entry("100", B2KStream.MODELS),
@@ -58,8 +67,8 @@ public class B2KAllFormattingStreams {
         //        factory.buildFormattingStream(builder, B2KStream.GARMENTS, "one", GarmentTransaction.class);
 
         // Build general-topic streams (controllers send to general topic)
-        factory.buildFormattingStream(builder, hh_name, STREAM_REGISTRY);
-        factory.buildFormattingStream(builder, hp_name, STREAM_REGISTRY);
-        factory.buildFormattingStream(builder, one_name, STREAM_REGISTRY);
+        if (hh_enabled) factory.buildFormattingStream(builder, hh_name, STREAM_REGISTRY);
+        if (hp_enabled) factory.buildFormattingStream(builder, hp_name, STREAM_REGISTRY);
+        if (one_enabled) factory.buildFormattingStream(builder, one_name, STREAM_REGISTRY);
     }
 }

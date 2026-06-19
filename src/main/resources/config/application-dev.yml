@@ -105,6 +105,12 @@ app:
     env: ${KAFKA_ENV:dev}
 env: dev
 conveyor:
-  one.name: ${CONVEYOR_ONE_NAME:01}
-  hp.name: ${CONVEYOR_HP_NAME:02}
-  hh.name: ${CONVEYOR_HH_NAME:03}
+  one:
+    name: ${CONVEYOR_ONE_NAME:01}
+    enabled: ${CONVEYOR_ONE_ENABLED:false}
+  hp:
+    name: ${CONVEYOR_HP_NAME:02}
+    enabled: ${CONVEYOR_HP_ENABLED:false}
+  hh:
+    name: ${CONVEYOR_HH_NAME:03}
+    enabled: ${CONVEYOR_HH_ENABLED:false}
