@@ -1,0 +1,200 @@
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-bu8us5", "modelShortDescription": "Short wsn59hdp", "modelLongDescription": "Long description 4hjbZFdUXUbt", "occupation": "2", "fromDate": "05112028", "toDate": "10022027", "hungType": "1", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-TOBF", "categoryDescription": "Category 2BMRyo3Op4", "itemCode": "ITEM-YPDZ", "dailyCredit": "6", "weeklyCredit": "77", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-OkflFp", "sizeCode": "SZ-X3T", "sizeDescription": "Size YHTpVp", "sizeSet": "SET-1J", "orderPosition": "4062"}
+# Path: /api/v1/import/01/users
+{"id": "400", "userNumber": "USR-93vJy", "card": "CARDbWJwRc", "surname": "SurnameFThd", "name": "NameEeH2", "clientNumber": "CLT2b5d", "functionCode": "FC2f", "costCenter": "CCDOA", "startDate": "17072027", "endDate": "25112028", "conveyor": "56", "weeklyCredit": "40", "categoryCode": "CATXU", "gender": "F", "language": "it-IT", "missingSize": "0", "sendMessage": "0", "phases": "1", "pickUp": "1", "primaryConveyor": "37", "disableDate": "15042028", "newUserCode": "NEWskXX", "email": "userV0fN@test.com", "workShift": "A"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-RUh9D", "itemCode": "ITEM-acnUI", "sizeCode": "SZ-HVW", "creditsDirtyBin": "91", "weeklyCredits": "48", "type": "1", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-5qILjkj2", "barcode": "BAR2nH2RaLT5d", "itemCode": "ITEM-A7ySK", "sizeCode": "SZ-xGx", "personalNumber": "PN1b5E", "client": "CLTcrG", "conveyor": "56", "storagesGroup": "SGLr"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-p5skaO", "modelShortDescription": "Short aFXdfpXe", "modelLongDescription": "Long description cKRUIRFBitzR", "occupation": "1", "fromDate": "16102025", "toDate": "05102024", "hungType": "1", "modelType": "1"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-fuui", "categoryDescription": "Category faw8jKEtzF", "itemCode": "ITEM-dlxE", "dailyCredit": "43", "weeklyCredit": "46", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-e5aPW8", "sizeCode": "SZ-wYu", "sizeDescription": "Size z3wHl0", "sizeSet": "SET-pV", "orderPosition": "1689"}
+# Path: /api/v1/import/01/users
+{"id": "400", "userNumber": "USR-gVhrT", "card": "CARDnCT5Eb", "surname": "Surnamec46c", "name": "NamexV7w", "clientNumber": "CLTJtqB", "functionCode": "FCVd", "costCenter": "CCZ5t", "startDate": "13072028", "endDate": "27122026", "conveyor": "41", "weeklyCredit": "59", "categoryCode": "CAT0x", "gender": "F", "language": "it-IT", "missingSize": "2", "sendMessage": "0", "phases": "0", "pickUp": "1", "primaryConveyor": "49", "disableDate": "07092025", "newUserCode": "NEWAUB4", "email": "useriwuG@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-nH5Bu", "itemCode": "ITEM-pVTtd", "sizeCode": "SZ-Hqf", "creditsDirtyBin": "69", "weeklyCredits": "81", "type": "0", "operationFlag": "0"}
+# Path: /api/v1/import/01/garments
+{"id": "500", "chipCode": "CHIP-0uKys46a", "barcode": "BARuVmubuYOFG", "itemCode": "ITEM-JHclI", "sizeCode": "SZ-2eP", "personalNumber": "PNxzHd", "client": "CLTFMP", "conveyor": "10", "storagesGroup": "SGur"}
+# Path: /api/v1/import/01/models
+{"id": "101", "modelCode": "MDL-BBGEQ5", "modelShortDescription": "Short 54B47UBc", "modelLongDescription": "Long description bVxGFrglavZ5", "occupation": "2", "fromDate": "23082024", "toDate": "24052026", "hungType": "1", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "201", "categoryCode": "CAT-hoGe", "categoryDescription": "Category ecSYQY4rN5", "itemCode": "ITEM-yNAq", "dailyCredit": "61", "weeklyCredit": "55", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-KZwiCg", "sizeCode": "SZ-Tra", "sizeDescription": "Size sO0BRy", "sizeSet": "SET-3z", "orderPosition": "14112"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-A47ZH", "card": "CARDSG5ImE", "surname": "SurnameK3uu", "name": "Namea2rg", "clientNumber": "CLTSsF3", "functionCode": "FCRy", "costCenter": "CCaFF", "startDate": "25062026", "endDate": "10082028", "conveyor": "35", "weeklyCredit": "21", "categoryCode": "CATyf", "gender": "M", "language": "it-IT", "missingSize": "2", "sendMessage": "0", "phases": "1", "pickUp": "1", "primaryConveyor": "87", "disableDate": "10032024", "newUserCode": "NEWnoFa", "email": "userfkNY@test.com", "workShift": "A"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-zOvMJ", "itemCode": "ITEM-E5xxL", "sizeCode": "SZ-wy2", "creditsDirtyBin": "58", "weeklyCredits": "23", "type": "1", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "500", "chipCode": "CHIP-dhLP5AFB", "barcode": "BARFFEKaK5mbK", "itemCode": "ITEM-ylItQ", "sizeCode": "SZ-Rq1", "personalNumber": "PNPvCE", "client": "CLTGLh", "conveyor": "4", "storagesGroup": "SGdG"}
+# Path: /api/v1/import/01/models
+{"id": "101", "modelCode": "MDL-U35j7K", "modelShortDescription": "Short avQsYnDA", "modelLongDescription": "Long description vZrO3XnRqWQb", "occupation": "1", "fromDate": "21102024", "toDate": "22062024", "hungType": "2", "modelType": "1"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-yXVQ", "categoryDescription": "Category xEl3roWITf", "itemCode": "ITEM-swgy", "dailyCredit": "74", "weeklyCredit": "66", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-DK4Jk6", "sizeCode": "SZ-TQh", "sizeDescription": "Size 2gpYt8", "sizeSet": "SET-xF", "orderPosition": "5369"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-zBzZ0", "card": "CARDmuD1wX", "surname": "SurnameOw83", "name": "NameHp4E", "clientNumber": "CLTc5DG", "functionCode": "FCl9", "costCenter": "CC6pA", "startDate": "02092028", "endDate": "24042026", "conveyor": "61", "weeklyCredit": "14", "categoryCode": "CAT2q", "gender": "F", "language": "fr-FR", "missingSize": "0", "sendMessage": "1", "phases": "0", "pickUp": "0", "primaryConveyor": "82", "disableDate": "04092025", "newUserCode": "NEWDBmY", "email": "useruPFg@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-T9G2a", "itemCode": "ITEM-81deL", "sizeCode": "SZ-wIl", "creditsDirtyBin": "58", "weeklyCredits": "98", "type": "2", "operationFlag": "0"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-SFoKbQvd", "barcode": "BARHrlJOjKt2F", "itemCode": "ITEM-yV6h3", "sizeCode": "SZ-3vl", "personalNumber": "PN9PIz", "client": "CLTw8b", "conveyor": "67", "storagesGroup": "SGTu"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-MUIBPw", "modelShortDescription": "Short EqnLwBm2", "modelLongDescription": "Long description gI2uU3qRgdaK", "occupation": "2", "fromDate": "19042027", "toDate": "20022025", "hungType": "0", "modelType": "2"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-tapg", "categoryDescription": "Category MAEwmQeHFA", "itemCode": "ITEM-NPpx", "dailyCredit": "89", "weeklyCredit": "77", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-BjFK86", "sizeCode": "SZ-WiW", "sizeDescription": "Size 0O6td0", "sizeSet": "SET-T5", "orderPosition": "5087"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-yNkG5", "card": "CARDfHAhxl", "surname": "Surname1v3p", "name": "Name0od3", "clientNumber": "CLTIlk5", "functionCode": "FCy0", "costCenter": "CCXrb", "startDate": "09072024", "endDate": "27012025", "conveyor": "40", "weeklyCredit": "47", "categoryCode": "CATsZ", "gender": "F", "language": "en-US", "missingSize": "1", "sendMessage": "2", "phases": "0", "pickUp": "0", "primaryConveyor": "15", "disableDate": "28042024", "newUserCode": "NEWuk5K", "email": "userbT6V@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "601", "userNumber": "USR-jz6A6", "itemCode": "ITEM-MJ47V", "sizeCode": "SZ-BqX", "creditsDirtyBin": "20", "weeklyCredits": "25", "type": "2", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-hZ3QWMWD", "barcode": "BARyCQqb9ACjZ", "itemCode": "ITEM-0wURp", "sizeCode": "SZ-DGZ", "personalNumber": "PNnkhM", "client": "CLTZ6S", "conveyor": "16", "storagesGroup": "SGe1"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-eG9Ld2", "modelShortDescription": "Short kuFOkUA6", "modelLongDescription": "Long description dcK3Scs5dLF9", "occupation": "2", "fromDate": "17042024", "toDate": "22102028", "hungType": "1", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-vEaE", "categoryDescription": "Category MyaQ2X4JzQ", "itemCode": "ITEM-piwk", "dailyCredit": "7", "weeklyCredit": "38", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "300", "modelCode": "MDL-dQFKXl", "sizeCode": "SZ-PjA", "sizeDescription": "Size tqnnDC", "sizeSet": "SET-50", "orderPosition": "12670"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-3k2oB", "card": "CARDTONNGt", "surname": "SurnameYXyJ", "name": "Nameqhk3", "clientNumber": "CLTsfE9", "functionCode": "FC0s", "costCenter": "CCssK", "startDate": "18102027", "endDate": "21092026", "conveyor": "92", "weeklyCredit": "2", "categoryCode": "CAT3H", "gender": "M", "language": "fr-FR", "missingSize": "1", "sendMessage": "1", "phases": "0", "pickUp": "1", "primaryConveyor": "83", "disableDate": "26092025", "newUserCode": "NEWKtZX", "email": "user0EEE@test.com", "workShift": "B"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-fRHKH", "itemCode": "ITEM-rBcX6", "sizeCode": "SZ-B7R", "creditsDirtyBin": "10", "weeklyCredits": "82", "type": "2", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-gHkyJg1a", "barcode": "BARFq7S4pbYcX", "itemCode": "ITEM-KSUfR", "sizeCode": "SZ-sSa", "personalNumber": "PNvNVY", "client": "CLT4Q5", "conveyor": "45", "storagesGroup": "SGev"}
+# Path: /api/v1/import/01/models
+{"id": "101", "modelCode": "MDL-pFSp5i", "modelShortDescription": "Short hLnTE6mr", "modelLongDescription": "Long description aMDyFAPUhT96", "occupation": "2", "fromDate": "03102024", "toDate": "12032026", "hungType": "0", "modelType": "1"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-UMSg", "categoryDescription": "Category 5skjbnA1oV", "itemCode": "ITEM-RX5H", "dailyCredit": "92", "weeklyCredit": "53", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "300", "modelCode": "MDL-iP6WIR", "sizeCode": "SZ-11i", "sizeDescription": "Size NZI6we", "sizeSet": "SET-0C", "orderPosition": "12338"}
+# Path: /api/v1/import/01/users
+{"id": "400", "userNumber": "USR-50gOt", "card": "CARDckFJha", "surname": "SurnameSpNE", "name": "NameIDQE", "clientNumber": "CLTerJo", "functionCode": "FCD9", "costCenter": "CCO2c", "startDate": "05102027", "endDate": "16052025", "conveyor": "35", "weeklyCredit": "86", "categoryCode": "CATF6", "gender": "F", "language": "en-US", "missingSize": "1", "sendMessage": "0", "phases": "1", "pickUp": "0", "primaryConveyor": "48", "disableDate": "02082028", "newUserCode": "NEWaZIi", "email": "userMFav@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-3lJAJ", "itemCode": "ITEM-4Ulyd", "sizeCode": "SZ-rmi", "creditsDirtyBin": "4", "weeklyCredits": "8", "type": "2", "operationFlag": "0"}
+# Path: /api/v1/import/01/garments
+{"id": "500", "chipCode": "CHIP-9d69sZ2V", "barcode": "BARnPCWNtCb6a", "itemCode": "ITEM-uCyqk", "sizeCode": "SZ-wsm", "personalNumber": "PNaNjR", "client": "CLTFDX", "conveyor": "32", "storagesGroup": "SG9z"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-QRxkfq", "modelShortDescription": "Short 3jfJoP5I", "modelLongDescription": "Long description BtPGDcUpyKoo", "occupation": "1", "fromDate": "09012028", "toDate": "02062025", "hungType": "0", "modelType": "2"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-ZbGc", "categoryDescription": "Category rScMF0sjwe", "itemCode": "ITEM-nxjv", "dailyCredit": "72", "weeklyCredit": "97", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "300", "modelCode": "MDL-QW8YI6", "sizeCode": "SZ-rxK", "sizeDescription": "Size QsP8NM", "sizeSet": "SET-pc", "orderPosition": "2675"}
+# Path: /api/v1/import/01/users
+{"id": "400", "userNumber": "USR-qabtc", "card": "CARDD6gbIr", "surname": "SurnamecOzj", "name": "Name3vo0", "clientNumber": "CLThmUV", "functionCode": "FCtQ", "costCenter": "CCaq6", "startDate": "11062024", "endDate": "26042025", "conveyor": "75", "weeklyCredit": "75", "categoryCode": "CATnW", "gender": "F", "language": "en-US", "missingSize": "2", "sendMessage": "0", "phases": "0", "pickUp": "1", "primaryConveyor": "21", "disableDate": "26042028", "newUserCode": "NEWnjB8", "email": "userjiDr@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-S4aJs", "itemCode": "ITEM-xgQNh", "sizeCode": "SZ-G1f", "creditsDirtyBin": "52", "weeklyCredits": "17", "type": "2", "operationFlag": "0"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-SKpunCoI", "barcode": "BARnYCq35yuSx", "itemCode": "ITEM-l6HPz", "sizeCode": "SZ-P1j", "personalNumber": "PNZflg", "client": "CLTvWS", "conveyor": "92", "storagesGroup": "SGMn"}
+# Path: /api/v1/import/01/models
+{"id": "101", "modelCode": "MDL-M7qLdc", "modelShortDescription": "Short iggBWLXt", "modelLongDescription": "Long description Iz58TSjsBpiK", "occupation": "2", "fromDate": "20082028", "toDate": "21062024", "hungType": "1", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "201", "categoryCode": "CAT-ffU3", "categoryDescription": "Category AWLfsUMSpX", "itemCode": "ITEM-lMQP", "dailyCredit": "1", "weeklyCredit": "74", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-nx0nBU", "sizeCode": "SZ-uVt", "sizeDescription": "Size oJ26Ib", "sizeSet": "SET-Yg", "orderPosition": "31686"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-C4CYX", "card": "CARDE1L2Fh", "surname": "Surnames7OB", "name": "NameeUAF", "clientNumber": "CLTLgFy", "functionCode": "FCTW", "costCenter": "CCUAR", "startDate": "13062028", "endDate": "01092025", "conveyor": "31", "weeklyCredit": "77", "categoryCode": "CATee", "gender": "M", "language": "en-US", "missingSize": "0", "sendMessage": "1", "phases": "0", "pickUp": "1", "primaryConveyor": "5", "disableDate": "05122027", "newUserCode": "NEWbtKr", "email": "useriNCk@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "601", "userNumber": "USR-lMDCE", "itemCode": "ITEM-5bJ6D", "sizeCode": "SZ-HRB", "creditsDirtyBin": "69", "weeklyCredits": "4", "type": "1", "operationFlag": "0"}
+# Path: /api/v1/import/01/garments
+{"id": "500", "chipCode": "CHIP-4MdJ8n9V", "barcode": "BARU2e8H3A49M", "itemCode": "ITEM-KPMxE", "sizeCode": "SZ-3ls", "personalNumber": "PN6y6c", "client": "CLTN3B", "conveyor": "71", "storagesGroup": "SGiN"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-KwNs63", "modelShortDescription": "Short WG8Pixb1", "modelLongDescription": "Long description lELcHCEAB6lf", "occupation": "2", "fromDate": "07072028", "toDate": "05082027", "hungType": "0", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-MFsN", "categoryDescription": "Category 51AsVQ1bFi", "itemCode": "ITEM-ntdZ", "dailyCredit": "63", "weeklyCredit": "97", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "300", "modelCode": "MDL-XJAn1D", "sizeCode": "SZ-JTN", "sizeDescription": "Size kEeULT", "sizeSet": "SET-Yr", "orderPosition": "5831"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-xbKot", "card": "CARDhtQhd3", "surname": "SurnameRREl", "name": "Name6Fs0", "clientNumber": "CLT2RN6", "functionCode": "FCZt", "costCenter": "CCaqb", "startDate": "01032024", "endDate": "07022024", "conveyor": "73", "weeklyCredit": "93", "categoryCode": "CATFh", "gender": "M", "language": "en-US", "missingSize": "2", "sendMessage": "1", "phases": "0", "pickUp": "1", "primaryConveyor": "28", "disableDate": "01102026", "newUserCode": "NEWnt9h", "email": "userfqoy@test.com", "workShift": "A"}
+# Path: /api/v1/import/01/user-models
+{"id": "601", "userNumber": "USR-RImdF", "itemCode": "ITEM-3vnKL", "sizeCode": "SZ-tdL", "creditsDirtyBin": "26", "weeklyCredits": "12", "type": "0", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-3Gc1hg9A", "barcode": "BAROmpOFYD5fk", "itemCode": "ITEM-IjBqX", "sizeCode": "SZ-BCU", "personalNumber": "PNSEH9", "client": "CLTwDp", "conveyor": "32", "storagesGroup": "SGoU"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-61S6bz", "modelShortDescription": "Short 0eEq7e0w", "modelLongDescription": "Long description Pye9jga1Eqa5", "occupation": "1", "fromDate": "27102028", "toDate": "23122025", "hungType": "0", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "201", "categoryCode": "CAT-bvKp", "categoryDescription": "Category P6fOITZHRB", "itemCode": "ITEM-OrTg", "dailyCredit": "12", "weeklyCredit": "44", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-PrEO6O", "sizeCode": "SZ-gEr", "sizeDescription": "Size WW7kFy", "sizeSet": "SET-Hl", "orderPosition": "26225"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-R2eKA", "card": "CARDfnKxhy", "surname": "SurnamevAiR", "name": "NameisPO", "clientNumber": "CLTt0zs", "functionCode": "FCMj", "costCenter": "CCqOB", "startDate": "24042027", "endDate": "12072027", "conveyor": "62", "weeklyCredit": "79", "categoryCode": "CATBG", "gender": "F", "language": "de-DE", "missingSize": "0", "sendMessage": "0", "phases": "0", "pickUp": "0", "primaryConveyor": "93", "disableDate": "20092027", "newUserCode": "NEWv6Mr", "email": "usercw04@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "601", "userNumber": "USR-O2llr", "itemCode": "ITEM-RGtrH", "sizeCode": "SZ-gQA", "creditsDirtyBin": "20", "weeklyCredits": "78", "type": "0", "operationFlag": "0"}
+# Path: /api/v1/import/01/garments
+{"id": "500", "chipCode": "CHIP-rJpD9qMy", "barcode": "BARsTU5KjRGfO", "itemCode": "ITEM-BjxC9", "sizeCode": "SZ-hvm", "personalNumber": "PNFxiO", "client": "CLTDbW", "conveyor": "56", "storagesGroup": "SGSs"}
+# Path: /api/v1/import/01/models
+{"id": "101", "modelCode": "MDL-PjQjCg", "modelShortDescription": "Short KVVJudMR", "modelLongDescription": "Long description lTDA6qlcdpYS", "occupation": "1", "fromDate": "07112028", "toDate": "23102027", "hungType": "0", "modelType": "2"}
+# Path: /api/v1/import/01/user-categories
+{"id": "201", "categoryCode": "CAT-qEbd", "categoryDescription": "Category bGhgP0EToH", "itemCode": "ITEM-nC1k", "dailyCredit": "80", "weeklyCredit": "98", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "300", "modelCode": "MDL-99lQDh", "sizeCode": "SZ-UVE", "sizeDescription": "Size 73UpMF", "sizeSet": "SET-Dk", "orderPosition": "9006"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-FCJw0", "card": "CARD5ZgVb3", "surname": "SurnameqVWY", "name": "NameAKU5", "clientNumber": "CLTpaMg", "functionCode": "FCk0", "costCenter": "CCpi6", "startDate": "07112025", "endDate": "11092025", "conveyor": "51", "weeklyCredit": "85", "categoryCode": "CATq5", "gender": "F", "language": "en-US", "missingSize": "0", "sendMessage": "0", "phases": "1", "pickUp": "0", "primaryConveyor": "65", "disableDate": "07072024", "newUserCode": "NEWw5ZH", "email": "userEThe@test.com", "workShift": "C"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-19IBV", "itemCode": "ITEM-Hhf40", "sizeCode": "SZ-rFp", "creditsDirtyBin": "25", "weeklyCredits": "51", "type": "2", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "500", "chipCode": "CHIP-mNz2AQlX", "barcode": "BAR6wFMRpWRkY", "itemCode": "ITEM-GBcw4", "sizeCode": "SZ-Gx2", "personalNumber": "PN3ISV", "client": "CLTAbl", "conveyor": "65", "storagesGroup": "SG5q"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-oaP9EA", "modelShortDescription": "Short 6BqO4dXK", "modelLongDescription": "Long description y2XZVnfV25Gv", "occupation": "1", "fromDate": "10102027", "toDate": "27032024", "hungType": "0", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "201", "categoryCode": "CAT-1upc", "categoryDescription": "Category RwcsPXSm0H", "itemCode": "ITEM-sN6j", "dailyCredit": "14", "weeklyCredit": "74", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-SswIen", "sizeCode": "SZ-FOR", "sizeDescription": "Size YN0yYF", "sizeSet": "SET-Ib", "orderPosition": "24644"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-PvhtV", "card": "CARDOifl2c", "surname": "SurnameAZ9t", "name": "Name1Aei", "clientNumber": "CLTyODs", "functionCode": "FC7J", "costCenter": "CCgfa", "startDate": "22012028", "endDate": "02102024", "conveyor": "63", "weeklyCredit": "84", "categoryCode": "CATKK", "gender": "M", "language": "it-IT", "missingSize": "0", "sendMessage": "1", "phases": "0", "pickUp": "0", "primaryConveyor": "13", "disableDate": "07032025", "newUserCode": "NEWZQ18", "email": "userS7Kn@test.com", "workShift": "A"}
+# Path: /api/v1/import/01/user-models
+{"id": "600", "userNumber": "USR-cKfV4", "itemCode": "ITEM-bkLjr", "sizeCode": "SZ-fqE", "creditsDirtyBin": "74", "weeklyCredits": "44", "type": "0", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-im2He1xP", "barcode": "BARGfE9y1emIq", "itemCode": "ITEM-pRCdk", "sizeCode": "SZ-o2e", "personalNumber": "PNUT1C", "client": "CLTqa2", "conveyor": "21", "storagesGroup": "SGuH"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-rDhzYY", "modelShortDescription": "Short 5PV3p1Ce", "modelLongDescription": "Long description DX9aBvd3WTd5", "occupation": "1", "fromDate": "27092024", "toDate": "28032024", "hungType": "0", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-phUo", "categoryDescription": "Category UEM933qdRV", "itemCode": "ITEM-m8Lq", "dailyCredit": "94", "weeklyCredit": "71", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-NVZFis", "sizeCode": "SZ-KjZ", "sizeDescription": "Size TKonkg", "sizeSet": "SET-Qg", "orderPosition": "4748"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-LShhy", "card": "CARDZlmFmi", "surname": "SurnameiqOK", "name": "NameLJen", "clientNumber": "CLTALBe", "functionCode": "FC65", "costCenter": "CCPS2", "startDate": "17122024", "endDate": "15092026", "conveyor": "71", "weeklyCredit": "77", "categoryCode": "CATHu", "gender": "M", "language": "fr-FR", "missingSize": "0", "sendMessage": "2", "phases": "1", "pickUp": "1", "primaryConveyor": "24", "disableDate": "18062026", "newUserCode": "NEWr3LJ", "email": "userBLFi@test.com", "workShift": "A"}
+# Path: /api/v1/import/01/user-models
+{"id": "601", "userNumber": "USR-HAoze", "itemCode": "ITEM-whFbz", "sizeCode": "SZ-2ns", "creditsDirtyBin": "13", "weeklyCredits": "87", "type": "2", "operationFlag": "0"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-J9QCnY6z", "barcode": "BARzOu8dWtSxn", "itemCode": "ITEM-MEGi8", "sizeCode": "SZ-iAZ", "personalNumber": "PNgulR", "client": "CLTOxn", "conveyor": "55", "storagesGroup": "SGlR"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-cEpiEq", "modelShortDescription": "Short 83GnCE3h", "modelLongDescription": "Long description C25gj8vw49YO", "occupation": "1", "fromDate": "22072025", "toDate": "24092028", "hungType": "0", "modelType": "1"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-p2oF", "categoryDescription": "Category WnfUgSyuSi", "itemCode": "ITEM-PJi0", "dailyCredit": "71", "weeklyCredit": "79", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "300", "modelCode": "MDL-BqKTwx", "sizeCode": "SZ-Ps6", "sizeDescription": "Size iXfMdQ", "sizeSet": "SET-0q", "orderPosition": "24775"}
+# Path: /api/v1/import/01/users
+{"id": "400", "userNumber": "USR-FXGlT", "card": "CARDWbvrXH", "surname": "SurnameyPLN", "name": "NameEYTn", "clientNumber": "CLTntNh", "functionCode": "FCA9", "costCenter": "CCmoT", "startDate": "28032024", "endDate": "20112027", "conveyor": "58", "weeklyCredit": "39", "categoryCode": "CATQF", "gender": "F", "language": "fr-FR", "missingSize": "0", "sendMessage": "1", "phases": "0", "pickUp": "1", "primaryConveyor": "5", "disableDate": "23022025", "newUserCode": "NEWMkXt", "email": "userzwmG@test.com", "workShift": "B"}
+# Path: /api/v1/import/01/user-models
+{"id": "601", "userNumber": "USR-nqF3q", "itemCode": "ITEM-3QtPr", "sizeCode": "SZ-mqM", "creditsDirtyBin": "54", "weeklyCredits": "23", "type": "1", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "500", "chipCode": "CHIP-yzQV1cOa", "barcode": "BAR1M0dQEPzYG", "itemCode": "ITEM-Olqtt", "sizeCode": "SZ-SXz", "personalNumber": "PN9vgh", "client": "CLTikx", "conveyor": "33", "storagesGroup": "SGrt"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-Nes1EC", "modelShortDescription": "Short T0JGe91C", "modelLongDescription": "Long description fAGIePrxIVOG", "occupation": "2", "fromDate": "14012027", "toDate": "15092026", "hungType": "0", "modelType": "1"}
+# Path: /api/v1/import/01/user-categories
+{"id": "200", "categoryCode": "CAT-XTKR", "categoryDescription": "Category H4sXbu91xB", "itemCode": "ITEM-8oHY", "dailyCredit": "30", "weeklyCredit": "7", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "301", "modelCode": "MDL-Kctmlj", "sizeCode": "SZ-GlK", "sizeDescription": "Size vApyi6", "sizeSet": "SET-hM", "orderPosition": "5088"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-4QyVQ", "card": "CARDRX5SwR", "surname": "SurnamerzJv", "name": "Nameugar", "clientNumber": "CLTipo0", "functionCode": "FCKk", "costCenter": "CCiQR", "startDate": "09012027", "endDate": "06052024", "conveyor": "47", "weeklyCredit": "34", "categoryCode": "CATrh", "gender": "M", "language": "en-US", "missingSize": "2", "sendMessage": "0", "phases": "0", "pickUp": "1", "primaryConveyor": "62", "disableDate": "09012025", "newUserCode": "NEWEazr", "email": "userMN6w@test.com", "workShift": "B"}
+# Path: /api/v1/import/01/user-models
+{"id": "601", "userNumber": "USR-lGxQz", "itemCode": "ITEM-PhPqt", "sizeCode": "SZ-i3c", "creditsDirtyBin": "21", "weeklyCredits": "56", "type": "2", "operationFlag": "1"}
+# Path: /api/v1/import/01/garments
+{"id": "501", "chipCode": "CHIP-ivwQONZq", "barcode": "BARmwvlM0wynQ", "itemCode": "ITEM-dHo9X", "sizeCode": "SZ-kOD", "personalNumber": "PNV2mF", "client": "CLTHmw", "conveyor": "32", "storagesGroup": "SG5k"}
+# Path: /api/v1/import/01/models
+{"id": "100", "modelCode": "MDL-ivM45B", "modelShortDescription": "Short oLtpQ39f", "modelLongDescription": "Long description 5hPxZ3QKy8ca", "occupation": "1", "fromDate": "13032026", "toDate": "23082025", "hungType": "0", "modelType": "0"}
+# Path: /api/v1/import/01/user-categories
+{"id": "201", "categoryCode": "CAT-ss9g", "categoryDescription": "Category ukv6YQLyUb", "itemCode": "ITEM-AeCs", "dailyCredit": "14", "weeklyCredit": "20", "dotationType": "0"}
+# Path: /api/v1/import/01/sizes
+{"id": "300", "modelCode": "MDL-EY3Hh7", "sizeCode": "SZ-ZGO", "sizeDescription": "Size A9nOrX", "sizeSet": "SET-q2", "orderPosition": "6256"}
+# Path: /api/v1/import/01/users
+{"id": "401", "userNumber": "USR-ZjQH7", "card": "CARD3UQnm3", "surname": "SurnameV3h3", "name": "NamegRfF", "clientNumber": "CLTNONN", "functionCode": "FCvJ", "costCenter": "CCwUQ", "startDate": "08112024", "endDate": "02022026", "conveyor": "85", "weeklyCredit": "46", "categoryCode": "CAT3t", "gender": "F", "language": "it-IT", "missingSize": "0", "sendMessage": "1", "phases": "0", "pickUp": "1", "primaryConveyor": "61", "disableDate": "20082025", "newUserCode": "NEWMMqV", "email": "userbWwf@test.com", "workShift": "C"}

@@ -1,24 +1,16 @@
 #!/bin/bash
-# =============================================================
-# Ordered POST requests to all import endpoints
-# Sequence: 100 -> 200 -> 300 -> 400 -> 600 -> 500
-# Usage: ./random_requests.sh [count] [conveyor]
-#   count    - number of requests to send (default: 20)
-#   conveyor - conveyor code (default: one)
-# =============================================================
 
 set -euo pipefail
 
-BASE_URL="http://localhost:6060/api/v1/import"
-
-COUNT=${1:-100}
-CONVEYOR=${2:-02}
+OUTPUT_FILE="${1:-payloads.jsonl}"
+COUNT=${2:-100}
+CONVEYOR=${3:-01}
 
 # ---------- helpers ----------
 rand_str()  { cat /dev/urandom | tr -dc 'A-Za-z0-9' | head -c "$1"; }
 rand_num()  { echo $((RANDOM % $1)); }
 rand_date() { printf '%02d%02d%04d' $((RANDOM % 28 + 1)) $((RANDOM % 12 + 1)) $((RANDOM % 5 + 2024)); }
-pick()      { local arr=("$@"); echo "${arr[$((RANDOM % ${#arr[@]}))]}"; }
+pick()      { local arr=("$@"); echo "${arr[$((RANDOM % ${#arr[@]}))]}";}
 
 # ---------- payload generators ----------
 models_payload() {
@@ -146,10 +138,13 @@ NUM_ENDPOINTS=${#ORDERED_ENDPOINTS[@]}
 
 # ---------- main loop ----------
 echo "=========================================="
-echo " Sending $COUNT requests in order"
+echo " Generating $COUNT payloads to file"
 echo " Order: 100 -> 200 -> 300 -> 400 -> 600 -> 500"
-echo " Target: $BASE_URL/$CONVEYOR/*"
+echo " Output: $OUTPUT_FILE"
 echo "=========================================="
+
+# Clear or create output file
+> "$OUTPUT_FILE"
 
 for i in $(seq 1 "$COUNT"); do
   idx=$(( (i - 1) % NUM_ENDPOINTS ))
@@ -158,29 +153,20 @@ for i in $(seq 1 "$COUNT"); do
   generator="${entry##*|}"
 
   payload="$($generator)"
-  url="$BASE_URL/$CONVEYOR/$path"
 
-  echo ""
-  echo "--- Request #$i  [$path] ---"
-  echo "POST $url"
-  echo "$payload" | python3 -m json.tool 2>/dev/null || echo "$payload"
+  # Write path as comment
+  echo "# Path: /api/v1/import/$CONVEYOR/$path" >> "$OUTPUT_FILE"
 
-  response=$(curl --noproxy '*' -s -w '\n%{http_code}' \
-    -H 'Content-Type: application/json' \
-    -X POST "$url" \
-    -d "$payload")
+  # Write payload as single line JSON
+  echo "$payload" | python3 -c "import sys, json; json.dump(json.load(sys.stdin), sys.stdout)" >> "$OUTPUT_FILE"
 
-  http_code=$(echo "$response" | tail -1)
-  body=$(echo "$response" | sed '$d')
+  echo "" >> "$OUTPUT_FILE"
 
-  echo "HTTP $http_code"
-  echo "$body" | python3 -m json.tool 2>/dev/null || echo "$body"
-
-  # Sleep between 0.1 and 0.5 seconds
-  sleep "0.$(( RANDOM % 4 + 1 ))"
+  echo "Generated payload #$i [$path]"
 done
 
 echo ""
 echo "=========================================="
-echo " Done! Sent $COUNT requests."
+echo " Done! Generated $COUNT payloads."
+echo " Output saved to: $OUTPUT_FILE"
 echo "=========================================="

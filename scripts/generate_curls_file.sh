@@ -1,18 +1,25 @@
 #!/bin/bash
 # =============================================================
-# Ordered POST requests to all import endpoints
-# Sequence: 100 -> 200 -> 300 -> 400 -> 600 -> 500
-# Usage: ./random_requests.sh [count] [conveyor]
-#   count    - number of requests to send (default: 20)
-#   conveyor - conveyor code (default: one)
+# Generate simple curl commands to file with variables
+# Usage: ./generate_curls.sh [count] [conveyor] [host] [api-key]
+#   count    - number of requests to generate (default: 20)
+#   conveyor - conveyor code (default: 02)
+#   host     - API host (default: http://localhost:6060)
+#   api-key  - API key (default: your-api-key-here)
 # =============================================================
 
 set -euo pipefail
 
-BASE_URL="http://localhost:6060/api/v1/import"
-
-COUNT=${1:-100}
+# Parameters
+COUNT=${1:-20}
 CONVEYOR=${2:-02}
+HOST=${3:-http://localhost:6060}
+API_KEY=${4:-your-api-key-here}
+
+# Output file
+OUTPUT_FILE="curl_requests_${CONVEYOR}_$(date +%s).sh"
+
+BASE_URL="$HOST/api/v1/import"
 
 # ---------- helpers ----------
 rand_str()  { cat /dev/urandom | tr -dc 'A-Za-z0-9' | head -c "$1"; }
@@ -144,12 +151,29 @@ ORDERED_ENDPOINTS=(
 
 NUM_ENDPOINTS=${#ORDERED_ENDPOINTS[@]}
 
-# ---------- main loop ----------
-echo "=========================================="
-echo " Sending $COUNT requests in order"
-echo " Order: 100 -> 200 -> 300 -> 400 -> 600 -> 500"
-echo " Target: $BASE_URL/$CONVEYOR/*"
-echo "=========================================="
+# ---------- Initialize output file ----------
+cat > "$OUTPUT_FILE" <<'FILEHEADER'
+#!/bin/bash
+# Auto-generated curl requests
+# Simple curl commands with variables
+
+set -euo pipefail
+
+FILEHEADER
+
+# Add parameters section
+cat >> "$OUTPUT_FILE" <<PARAMS
+# ========== CONFIGURATION ==========
+HOST="$HOST"
+API_KEY="$API_KEY"
+CONVEYOR="$CONVEYOR"
+BASE_URL="\$HOST/api/v1/import/\$CONVEYOR"
+# ==================================
+
+PARAMS
+
+# ---------- main loop - generate curl commands ----------
+echo "Generating $COUNT simple curl requests to $OUTPUT_FILE..."
 
 for i in $(seq 1 "$COUNT"); do
   idx=$(( (i - 1) % NUM_ENDPOINTS ))
@@ -158,29 +182,33 @@ for i in $(seq 1 "$COUNT"); do
   generator="${entry##*|}"
 
   payload="$($generator)"
-  url="$BASE_URL/$CONVEYOR/$path"
 
-  echo ""
-  echo "--- Request #$i  [$path] ---"
-  echo "POST $url"
-  echo "$payload" | python3 -m json.tool 2>/dev/null || echo "$payload"
+  # Escape payload for shell
+  escaped_payload=$(echo "$payload" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g')
 
-  response=$(curl --noproxy '*' -s -w '\n%{http_code}' \
-    -H 'Content-Type: application/json' \
-    -X POST "$url" \
-    -d "$payload")
+  # Write curl command with payload in same block
+  cat >> "$OUTPUT_FILE" <<CURLCMD
 
-  http_code=$(echo "$response" | tail -1)
-  body=$(echo "$response" | sed '$d')
+# Request #$i - $path
+curl --noproxy '*' -s -X POST "\$BASE_URL/$path" \\
+  -H "Content-Type: application/json" \\
+  -H "X-API-Key: \$API_KEY" \\
+  -d '$payload'
 
-  echo "HTTP $http_code"
-  echo "$body" | python3 -m json.tool 2>/dev/null || echo "$body"
-
-  # Sleep between 0.1 and 0.5 seconds
-  sleep "0.$(( RANDOM % 4 + 1 ))"
+CURLCMD
 done
 
+# Make the output file executable
+chmod +x "$OUTPUT_FILE"
+
+echo "==========================================="
+echo " Simple curl requests file generated!"
+echo " File: $OUTPUT_FILE"
+echo " Host: $HOST"
+echo " Conveyor: $CONVEYOR"
+echo " API Key: ${API_KEY:0:10}..."
+echo " Total requests: $COUNT"
 echo ""
-echo "=========================================="
-echo " Done! Sent $COUNT requests."
-echo "=========================================="
+echo " To execute all requests, run:"
+echo " ./$OUTPUT_FILE"
+echo "==========================================="
