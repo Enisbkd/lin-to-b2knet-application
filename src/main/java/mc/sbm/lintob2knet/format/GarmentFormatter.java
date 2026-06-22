@@ -7,7 +7,7 @@ public class GarmentFormatter {
     public static String format(GarmentTransaction t) {
         return fix(t.getId(), 3) +
             fix(t.getChipCode(), 24) +
-            fix(t.getBarcode(), 24) +
+            fix(t.getBarcode() == null ? "" : t.getBarcode(), 24) +
             fix(t.getItemCode(), 12) +
             fix(t.getSizeCode(), 12) +
             fix(t.getPersonalNumber(), 12) +
