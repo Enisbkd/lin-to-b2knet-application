@@ -53,19 +53,19 @@ public class UserTransaction {
     @Pattern(regexp = "^[MF]$", message = "Gender must be M or F")
     private String gender;
 
-    @Pattern(regexp = "^[a-z]{2}-[A-Z]{2}$", message = "Language must be in format xx-XX")
+    @Pattern(regexp = "^([a-z]{2}-[A-Z]{2})?$", message = "Language must be in format xx-XX or empty")
     private String language;
 
-    @Pattern(regexp = "^[0-2]$", message = "Missing size must be 0, 1, or 2")
+    @Pattern(regexp = "^[0-2]?$", message = "Missing size must be 0, 1, 2 or empty")
     private String missingSize;
 
-    @Pattern(regexp = "^[0-2]$", message = "Send message must be 0, 1, or 2")
+    @Pattern(regexp = "^[0-2]?$", message = "Send message must be 0, 1, 2 or empty")
     private String sendMessage;
 
-    @Pattern(regexp = "^[01]$", message = "Phases must be 0 or 1")
+    @Pattern(regexp = "^[01]?$", message = "Phases must be 0, 1 or empty")
     private String phases;
 
-    @Pattern(regexp = "^[01]$", message = "Pickup must be 0 or 1")
+    @Pattern(regexp = "^[01]?$", message = "Pickup must be 0, 1 or empty")
     private String pickUp;
 
     @Pattern(regexp = "^\\d{0,2}$", message = "Primary conveyor must be up to 2 digits")
