@@ -14,8 +14,8 @@ public class UserFormatter {
             fix(t.getClientNumber(), 12) +
             fix(t.getFunctionCode(), 12) +
             fix(t.getCostCenter(), 12) +
-            fix(String.valueOf(t.getStartDate()), 8) +
-            fix(String.valueOf(t.getEndDate()), 8) +
+            fix(t.getStartDate() == null ? "" : String.valueOf(t.getStartDate()), 8) +
+            fix(t.getEndDate() == null ? "" : String.valueOf(t.getEndDate()), 8) +
             fix(t.getConveyor(), 2) +
             fix(t.getWeeklyCredit(), 2) +
             fix(t.getCategoryCode(), 8) +
