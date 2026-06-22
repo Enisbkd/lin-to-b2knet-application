@@ -5,6 +5,7 @@ import mc.sbm.lintob2knet.model.UserTransaction;
 
 public class UserFormatter {
     public static String format(UserTransaction t) {
+        applyDefaults(t);
         String sb = fix(t.getId(), 3) +
             fix(t.getUserNumber(), 12) +
             fix(t.getCard(), 24) +
@@ -25,11 +26,30 @@ public class UserFormatter {
             fix(t.getPhases(), 1) +
             fix(t.getPickUp(), 1) +
             fix(t.getPrimaryConveyor(), 2) +
-            fix(String.valueOf(t.getDisableDate()), 8) +
+            fix(t.getDisableDate() == null ? "*" : String.valueOf(t.getDisableDate()), 8) +
             fix(t.getNewUserCode(), 12) +
             fix(t.getEmail(), 50) +
             fix(t.getWorkShift(), 30);
         return sb;
     }
+
+    private static void applyDefaults(UserTransaction t) {
+        if (t.getPickUp() == null || t.getPickUp().isBlank()) {
+            t.setPickUp("0");
+        }
+        if (t.getSendMessage() == null || t.getSendMessage().isBlank()) {
+            t.setSendMessage("0");
+        }
+        if (t.getMissingSize() == null || t.getMissingSize().isBlank()) {
+            t.setMissingSize("1");
+        }
+        if (t.getPhases() == null || t.getPhases().isBlank()) {
+            t.setPhases("0");
+        }
+        if (t.getLanguage() == null || t.getLanguage().isBlank()) {
+            t.setLanguage("fr-FR");
+        }
+    }
+
     private static String fix(String s,int len){ if (s==null) s=""; if (s.length()>len) return s.substring(0,len); return String.format("%-"+len+"s", s); }
 }
