@@ -22,7 +22,7 @@ jib {
     }
   }
   to {
-    image = "dockerh.bbad1.sbm.interne/integration-docker-images/lintob2knetapplication:$version-$buildnumber"
+    image = "dockerh.bbad1.sbm.interne/integration-docker-images/lintob2knetapplication:${project.version}-$buildnumber"
     auth {
       username = System.getenv("DOCKER_REGISTRY_CREDENTIALS_USR")
       password = System.getenv("DOCKER_REGISTRY_CREDENTIALS_PSW")
