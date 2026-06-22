@@ -31,9 +31,9 @@ public class UserModelTransaction {
     @Pattern(regexp = "^\\d{0,2}$", message = "Weekly credits must be up to 2 digits")
     private String weeklyCredits;
 
-    @Pattern(regexp = "^[0-2]$", message = "Type must be 0, 1, or 2")
+    @Pattern(regexp = "^[0-2]?$", message = "Type must be 0, 1, 2 or empty")
     private String type;
 
-    @Pattern(regexp = "^[01]$", message = "Operation flag must be 0 or 1")
+    @Pattern(regexp = "^[01]?$", message = "Operation flag must be 0, 1 or empty")
     private String operationFlag;
 }

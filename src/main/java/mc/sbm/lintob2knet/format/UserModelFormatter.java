@@ -4,6 +4,7 @@ import mc.sbm.lintob2knet.model.UserModelTransaction;
 
 public class UserModelFormatter {
     public static String format(UserModelTransaction t) {
+        applyDefaults(t);
         String sb = fix(t.getId(), 3) +
             fix(t.getUserNumber(), 12) +
             fix(t.getItemCode(), 30) +
@@ -13,6 +14,15 @@ public class UserModelFormatter {
             fix(t.getType(), 30) +
             fix(t.getOperationFlag(), 30);
         return sb;
+    }
+
+    private static void applyDefaults(UserModelTransaction t) {
+        if (t.getType() == null || t.getType().isBlank()) {
+            t.setType("1");
+        }
+        if (t.getOperationFlag() == null || t.getOperationFlag().isBlank()) {
+            t.setOperationFlag("1");
+        }
     }
 
     private static String fix(String s, int len) {
